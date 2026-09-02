@@ -1,0 +1,534 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+:root {
+    --primary-color: #8F181A;
+    --primary-dark: #580C0E;
+    --secondary-color: #D3A132;
+    --secondary-dark: #B6892C;
+
+    --light-bg: #F8F6F2;
+    --dark-color: #2B1F1F;
+    --text-color: #333333;
+    --muted-color: #6c757d;
+    --white: #ffffff;
+    --border-color: #E8DED2;
+
+    --gold-light: #E7C76A;
+    --maroon-light: #B94B4D;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+
+/* =========================
+   GENERAL ELEMENTS
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    transition: all 0.3s ease;
+}
+
+section {
+    position: relative;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-light {
+    background-color: var(--light-bg) !important;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-light:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   TOP INFORMATION BAR
+========================= */
+
+.top-info-bar {
+    font-size: 0.9rem;
+}
+
+.top-info-bar i {
+    color: var(--secondary-color);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    letter-spacing: -0.5px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: #343a40;
+    font-weight: 500;
+    margin-left: 8px;
+    margin-right: 8px;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 65%;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+    min-height: 650px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.97) 0%,
+            rgba(255, 255, 255, 0.92) 42%,
+            rgba(255, 255, 255, 0.35) 75%,
+            rgba(255, 255, 255, 0.10) 100%
+        ),
+        url("../images/hospital.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-section h1 {
+    max-width: 750px;
+    line-height: 1.1;
+    color: var(--primary-dark);
+}
+
+.hero-section .lead {
+    max-width: 650px;
+    color: #50565c;
+    font-size: 1.2rem;
+}
+
+.hero-section .text-uppercase {
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    color: var(--secondary-dark) !important;
+}
+
+
+/* =========================
+   INFORMATION CARDS
+========================= */
+
+.shadow-sm {
+    transition: all 0.3s ease;
+}
+
+.py-5 .shadow-sm:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(88, 12, 14, 0.12) !important;
+}
+
+.py-5 .shadow-sm i {
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.bg-light img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+}
+
+.bg-light .text-uppercase {
+    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    color: var(--secondary-dark) !important;
+}
+
+
+/* =========================
+   DEPARTMENT CARDS
+========================= */
+
+.card {
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(88, 12, 14, 0.14) !important;
+}
+
+.card-body {
+    transition: all 0.3s ease;
+}
+
+.card i {
+    transition: all 0.3s ease;
+    color: var(--primary-color);
+}
+
+.card:hover i {
+    transform: scale(1.1);
+    color: var(--secondary-dark);
+}
+
+.card h4 {
+    margin-bottom: 12px;
+    color: var(--primary-dark);
+}
+
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.bg-light h5 {
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+}
+
+.bg-light h5 i {
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+}
+
+.bg-light .text-muted {
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   EMERGENCY CTA
+========================= */
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.bg-primary h2 {
+    color: var(--white);
+}
+
+.bg-primary p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-primary .btn-light {
+    color: var(--primary-color);
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.bg-primary .btn-light:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-dark);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: var(--primary-dark) !important;
+}
+
+footer h4,
+footer h5 {
+    color: var(--white);
+}
+
+footer a {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+footer a:hover {
+    color: var(--secondary-color) !important;
+    padding-left: 4px;
+}
+
+footer i {
+    color: var(--secondary-color);
+}
+
+footer hr {
+    opacity: 0.2;
+    border-color: var(--secondary-color);
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+section .text-uppercase {
+    letter-spacing: 1.5px;
+    color: var(--secondary-dark);
+}
+
+section h2 {
+    line-height: 1.2;
+    color: var(--primary-dark);
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 991px) {
+
+    .hero-section {
+        min-height: 580px;
+
+        background:
+            linear-gradient(
+                rgba(255, 255, 255, 0.90),
+                rgba(255, 255, 255, 0.90)
+            ),
+            url("../images/hospital.jpg");
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .navbar-nav {
+        padding-top: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+    .hero-section {
+        min-height: 530px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1.05rem;
+    }
+
+    .hero-section .d-flex {
+        justify-content: center;
+    }
+
+    section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .display-3 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 1.9rem;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
+
+
+/* =========================
+   RESPONSIVE - SMALL PHONES
+========================= */
+
+@media (max-width: 480px) {
+
+    .hero-section {
+        min-height: 500px;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem !important;
+    }
+}
+
+
+/* =========================
+   HOSPITAL LOGO
+========================= */
+
+.hospital-logo {
+    height: 100px;
+    width: auto;
+    display: block;
+}
+
+@media (max-width: 767px) {
+    .hospital-logo {
+        height: 45px;
+    }
+}
+
+
+/* =========================
+   OPTIONAL SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F4EFE8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-dark);
+}
